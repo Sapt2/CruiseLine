@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/style.css">
+ <script>
+        window.addEventListener('scroll',function(){
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle("sticky",window.scrollY > 50);
+        });
+
+  </script>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    </head>
+    <body style="background-color: #fff;">
+
+
+ <div id="cruse">
+     <div class="loader_bg">
+    <div class="loader"></div>
+</div>
+  <div class="popup">
+    <button id="close">&times;</button>
+    <h1>Cookies and Privacy</h1>
+    <p>This website uses cookies to ensure you to get the best experience on our website</p>
+    
+    <a href="#" class="accept">Accept all cookies</a>
+    <a href="#" class="setting">Customize settings</a>
+  </div>
+  <!--NAVBAR-->
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="padding-left: 20px;">
+    <div class="container-fluid">
+     <img src="../images/newlogo.png" style="width: 5%;">
+          <span style="font-size: 25px;color:white;">
+          <i> Pearl <small style="color:rgb(247, 182, 4);font-size: 20px;">Cruise</small> Line</i>
+          </span>
+
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+              <li class="nav-item" style="background: rgba(0,0,0,0.4);border-radius: 10px;">
+            <a class="nav-link active text-white bar" href="AdminLogin.html" >ADMIN </a>
+          </li>
+          
+          <li class="nav-item" style="background: rgba(0,0,0,0.4);border-radius: 10px;">
+            <a class="nav-link active text-white bar" href="test.html" >LOG IN </a>
+          </li>
+            <li class="nav-item" style="background: rgba(0,0,0,0.6);border-radius: 10px;">
+            <a class="nav-link active text-white bar" href="Login.html">SIGN UP </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!--MINI_NAV-->
+  <div style="padding: 20px;background-color:rgb(248, 246, 244);">
+    <span>
+    
+    <span style="padding: 20px;"><i class="fas fa-phone"><small> +23-4587-5269</small></i></span>
+    <span style="padding: 20px;"><i class="fas fa-envelope"><small> pearlcruise@gmail.com</small></i></span>
+    <span>
+      
+    </span>
+      
+  </span>
+  </div>
+
+  <section class="home">
+          
+        <video class="video-slide" src="video2.mp4" autoplay muted loop></video>
+        <div class="content">
+            <h1>wonder<span id="red">f</span>ul. <br> <span>J<span id="blue">o</span>urney</h1>
+            <p>GET 30% OFF</p>
+            <div class="countdown"><h3></h3></div><br>
+            <a href="test.html">Book Now!</a>
+           </div>
+      
+      </section>
+      <section class="Service">
+          
+        <div class="row">
+          <h2 class="heading">Our Services</h2>
+        </div>
+        <div class="row">
+          <div class="column">
+            <div class="card">
+              <div class="icon-wraper">
+                <i class="fa-sharp fa-solid fa-champagne-glasses fa-beat fa-2xs"></i>
+              </div>
+              <h3>FOOD</h3>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="card">
+              <div class="icon-wraper">
+                <i class="fa-sharp fa-solid fa-dollar-sign fa-beat fa-2xs"></i>
+              </div>
+              <h3>ONBOARD CURRENCY</h3>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="card">
+              <div class="icon-wraper">
+                <i class="fa-sharp fa-solid fa-scissors fa-beat fa-2xs"></i>
+              </div>
+              <h3>SPA</h3>
+              
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="card">
+              <div class="icon-wraper">
+                <i class="fa-solid fa-ship fa-beat fa-2xs"></i>
+              </div>
+              <h3>CRUISE TOURES</h3>
+              
+            </div>
+          </div>
+        </div>
+
+      </section>
+        <br><br><br><br><br>
+        
+        
+   
+     <script src="main.js"></script>
+     <script src="popup.js"></script>
+     
+    <script>
+        setTimeout(function(){
+            $('.loader_bg').fadeToggle();
+        }, 1500);
+    </script>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+       
+</script>
+</body>
+</html>

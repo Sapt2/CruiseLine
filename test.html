@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <style>
+        .form-box{
+       width: 100%;
+    max-width: 450px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background:rgb(0,0,0,0.3);
+    padding: 25px 60px 60px;
+    text-align: center;
+    border-radius: 30px;
+   
+}
+.form-box h1{
+    font-size: 30px;
+   font-weight: 1000;
+    color: #fff;
+    position: relative;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+        margin-bottom: 30px;
+
+} 
+.form-box h1::after{
+    content: '';
+    width: 30px;
+    height: 4px;
+    border-radius: 4px;
+    background: rgb(247, 182, 4);
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.input-field{
+    background: #eaeaea;
+    margin: 7px 0;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    
+    transition: max-height 0.5s;
+    
+}
+.input-field input, .input-field select{
+    width: 100%;
+    background: transparent;
+    border: 0;
+    padding: 10px 5px;
+    color: #3407d7;
+    
+}
+.input-field i{
+    margin-left: 10px;
+    color: #999;
+}
+.btn-field{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 45px;
+}
+.btn-field a, .btn-field input,.btn-field button{
+    flex-basis: 45%;
+    background: rgb(247, 182, 4);
+    color: #fff;
+    height: 40px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: background 2s;
+    text-align: center;
+    text-decoration: none;
+}
+.input-group{
+    height: 360px;
+
+}
+    </style>
+    <script>
+              function create()
+          {
+              location.href="http://localhost:8080/MAJOR_PROJECT/frontend/Login.html";
+          }
+     </script>
+     
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+    </head>
+    
+    <body  style="background: url(../images/1.jpeg) center;background-size: cover; ">
+        <form  method="POST" action="http://localhost:8080/MAJOR_PROJECT/Login1">
+             <div class="form-box">
+        <h1 id="title">Sign In</h1>
+            <div class="input-field">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" required placeholder="Email" name="email">
+                </div>
+                <div class="input-field">
+                    <i class="fa-solid fa-key"></i>
+                    <input type="password" required placeholder="Password" name="password">
+                </div>
+        
+         <a href="http://localhost:8080/MAJOR_PROJECT/frontend/ValidateEmail.html" id="myBtn">Forget Password?</a>
+        
+        <div class="btn-field">
+            <input type="submit" name="log" id="" value="Login">
+            <input type="button" value="Create" onclick="create()">
+         </div>
+             </div></form>
+        
+        <!-- FORGET PASSWORD -->
+        <script src="captcha.js"></script>
+      
+
+    </body>
+</html>
+
