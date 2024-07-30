@@ -129,7 +129,7 @@ th
         
     <div class="tab">
         <h1 style="color: #fff;">DASHBOARD<hr></h1>
-        <a href="dashboard.jsp" >Admin Table</a>
+        <a href="dashboard.jsp" style="color:black;" class="active">Admin Table</a>
         <a href="user.jsp">User Table</a>
         <a href="cruise.jsp">Cruise Table</a>
         <a href="booking_details.jsp">Booking Details Table</a>
@@ -137,12 +137,15 @@ th
         <a href="cruise_add.jsp">Cruise Add</a>
         <a href="room_add.jsp">Room Add</a>
        <a href="vacation_table.jsp">vacation Table</a>
-       <a href="review.jsp" style="color:black;" class="active">Review Table</a>
+       <a href="review.jsp">Review Table</a>
 
 <i class="fa-solid fa-right-from-bracket" style="color: #fdfcfc;"></i>    </div>
     
-        <div id="admin" class="tabcontent">
-            
+        <div id="admin" class="tabcontent"><center>
+            <form method="POST" action="search.jsp">
+                    <input type="text" placeholder="Enter User to search" name="tSearch" style="width: 500px; height: 25px" required>
+                    <input type="submit" name="bSearch" style="height: 30px; width: 100px; font-style: italic" value="Search">
+            </form></center>
             <br>
         <%
       //STEP 1 : REGISTERING OF THE REQUIRED DRIVER WITH THE JAVA PROGRAM
@@ -157,7 +160,7 @@ th
       %>
     <% 
                 //STEP 4: CREATING THE QUERY
-                String q = "SELECT * FROM review";
+                String q = "SELECT * FROM ADMIN";
             
                 //STEP 5: INSTANTIATING STATEMENT OBJECT FOR EXECUTING SQL QUERIES
                 ors =(OracleResultSet) ost.executeQuery(q);
@@ -186,7 +189,7 @@ th
                             %>
                     <tr>
                         <%
-                            for(int i=1; i <= 2; i++)
+                            for(int i=1; i <= 3; i++)
                             {
                         %>
                             <td><%=ors.getString(i)%></td>
@@ -203,6 +206,4 @@ th
             </table>
   </div>
     </body>
-</html>
-
 </html>

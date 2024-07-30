@@ -1,9 +1,8 @@
 <%-- 
-    Document   : cruise
-    Created on : May 17, 2023, 7:22:39 PM
+    Document   : user
+    Created on : May 17, 2023, 7:35:26 PM
     Author     : risit
 --%>
-
 <%@page import="java.sql.DriverManager"%>
 <%@page import="oracle.jdbc.OraclePreparedStatement"%>
 <%@page import="oracle.jdbc.OracleResultSetMetaData"%>
@@ -14,13 +13,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <title>JSP Page</title>
-         <style>
-             body img{
+      
+<style>
+        body img{
         position: absolute;
         left:80%;
         top:60%;
@@ -48,6 +47,7 @@ th
   width: 25%;
   height: 100%;
   position: fixed;
+  overflow:hidden;
 }
 .tab h1{
   text-align: center;
@@ -126,24 +126,28 @@ th
 
     </head>
     <body>
-        
+       
     <div class="tab">
         <h1 style="color: #fff;">DASHBOARD<hr></h1>
         <a href="dashboard.jsp" >Admin Table</a>
-        <a href="user.jsp">User Table</a>
+        <a href="user.jsp" style="color:black;" class="active">User Table</a>
         <a href="cruise.jsp">Cruise Table</a>
         <a href="booking_details.jsp">Booking Details Table</a>
         <a href="room_details.jsp">Room Details Table</a>
         <a href="cruise_add.jsp">Cruise Add</a>
-        <a href="room_add.jsp">Room Add</a>
+        <a href="room_add.jsp" >Room Add</a>
        <a href="vacation_table.jsp">vacation Table</a>
-       <a href="review.jsp" style="color:black;" class="active">Review Table</a>
+       <a href="review.jsp">Review Table</a>
 
-<i class="fa-solid fa-right-from-bracket" style="color: #fdfcfc;"></i>    </div>
-    
-        <div id="admin" class="tabcontent">
-            
-            <br>
+<i class="fa-solid fa-right-from-bracket" style="color: #fdfcfc;"></i>
+    </div>
+        <div id="user" class="tabcontent">
+            <div style="padding-bottom: 15px;">
+            <center>
+            <form method="POST" action="user_search.jsp">
+                    <input type="text" placeholder="Enter User to search" name="tSearch" style="width: 500px; height: 25px" required>
+                    <input type="submit" name="bSearch" style="height: 30px; width: 100px; font-style: italic" value="Search">
+            </form></center></div>
         <%
       //STEP 1 : REGISTERING OF THE REQUIRED DRIVER WITH THE JAVA PROGRAM
                 //Class.forName("oracle.jdbc.OracleDriver");
@@ -155,15 +159,15 @@ th
                 ost= (OracleStatement)oconn.createStatement();
                 
       %>
-    <% 
+            <% 
                 //STEP 4: CREATING THE QUERY
-                String q = "SELECT * FROM review";
+                String q = "SELECT * FROM USERS";
             
                 //STEP 5: INSTANTIATING STATEMENT OBJECT FOR EXECUTING SQL QUERIES
                 ors =(OracleResultSet) ost.executeQuery(q);
                 
                  //STEP 6: GETTING SYSTEM INFORMATION ABOUT THE FETCHED TABLE
-                orsmd = (OracleResultSetMetaData)ors.getMetaData();
+                orsmd= (OracleResultSetMetaData)ors.getMetaData();
             %>
    <table>
                 <thead>
@@ -176,7 +180,8 @@ th
                         <%
                             }
                             %>
-                          
+                            
+                            <th>Delete</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -186,14 +191,17 @@ th
                             %>
                     <tr>
                         <%
-                            for(int i=1; i <= 2; i++)
+                            for(int i=1; i <= 7; i++)
                             {
                         %>
                             <td><%=ors.getString(i)%></td>
                          <%
                               }
                             %>
-                
+                            
+                <form method="POST" action="http://localhost:8080/MAJOR_PROJECT/user_delete?email=<%=ors.getString(1)%>"  onsubmit=" return funDelete()">
+                                    <td><button type="submit" class="btn btn-danger">Delete</button></td>
+                            </form>
                     </tr>
                      <%
                            }
@@ -201,8 +209,8 @@ th
                 </tbody>
                 <tfoot></tfoot>
             </table>
+            
+                
   </div>
     </body>
-</html>
-
 </html>
